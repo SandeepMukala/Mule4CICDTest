@@ -28,7 +28,7 @@ pipeline {
               bat "echo $vCoreInput"
               bat 'echo %WORKSPACE%'
               bat 'echo deploying artifact to cloud hub'
-              bat "anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize $vCoreInput \"cli-cicd\" \"%WORKSPACE%/target/mule4test-1.0.0-SNAPSHOT-mule-application.jar\" --username=\"sandeep_m\" --password=\"Whishworks@2018\""
+              bat "anypoint-cli runtime-mgr cloudhub-application deploy --runtime 4.1.3 --workerSize $vCoreInput \"mule4-cicd\" \"%WORKSPACE%/target/mule4test-1.0.0-SNAPSHOT-mule-application.jar\" --username=\"sandeep_m\" --password=\"Whishworks@2018\""
             }
 
           }
