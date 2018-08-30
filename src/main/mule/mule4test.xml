@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3cc33135-19c6-49f4-a8b5-e0e6912f85c8">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule4testFlow" doc:id="9d1a7c8b-8fd5-4131-99cf-69ad592e50a4" >
+		<http:listener doc:name="Listener" doc:id="b19af2af-8064-4170-a1a2-cd4e8fa34095" config-ref="HTTP_Listener_config" path="/mule4Test" allowedMethods="GET"/>
+		<logger level="INFO" doc:name="Logger" doc:id="de098ece-274a-48ca-89a6-0e121b96b43d" message="Mule 4 flow invoked"/>
+		<set-payload value='{
+  "Message" : "Respose from Mule 4 flow"
+}' doc:name="Set Payload" doc:id="e418edc2-f6a9-4235-a518-6e769690b735" />
+	</flow>
+</mule>
